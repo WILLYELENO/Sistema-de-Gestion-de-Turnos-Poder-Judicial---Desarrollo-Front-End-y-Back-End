@@ -1,0 +1,128 @@
+{% extends "base_template.html" %}
+
+{% block content %}
+
+
+    <!-- /. NAV TOP -->
+    
+        <nav class="navbar-default navbar-side" role="navigation">
+            <div class="bg-circulo">
+                <ul class="nav" id="main-menu">
+                    <li>
+                        <a class="text-dark" href="/professional"><i class="fa fa-dashboard"></i> Estado</a>
+                    </li>
+
+                     <li>
+                        <a class="text-dark" href="/accepted"  ><i class="fa fa-dashboard"></i> Aceptados</a>
+                    </li>
+
+                     <li>
+                        <a class="text-dark" href="/rejected"><i class="fa fa-dashboard"></i> Rechazados</a>
+                    </li>
+				</ul>
+            </div>
+        </nav>
+        <!-- /. NAV SIDE  -->
+        <div class="text-header d-flex align-items-center">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <h1 class="main_section fadeIn"> Gestión de Turnos</h1>   
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br>
+        <br>
+        <br>
+        
+        <div id="container containericons text-login">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="bg-circulo-transp3 ">
+                            <div class="panel-heading">
+                                
+                            </div>
+                    
+                            <div class="panel-body">
+                                <div class="panel-group" id="accordion">
+                
+
+        
+                                <div class="panel panel-primary">
+                                        <div class="panel-heading">
+                                        </div>
+                                        <div id="collapseTwo" class="panel-collapse in" style="height: auto;">
+                                        
+                            
+                            <div class="panel-body ">
+                                <div class="table-responsive">
+                                    <table class="table">
+                                        <thead>
+                                            <tr>
+                                            
+                                                <th>Nombre</th>
+                                                <th>Email</th>
+                                                <th>Country</th>
+                                                <th>Bloque</th>
+                                                <th>Sac</th>
+                                                <th>Fecha</th>
+                                                <th>Horario</th>
+                                                <th>Asunto</th>
+                                                <th>Aceptar</th>
+                                                <th>Rechazar</th>
+                                                
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+
+
+
+
+                            
+                        
+                                        {%for a in record%}
+                                    
+                                            <tr>
+                                                <th>{{a.first_name}} {{ a.last_name}}</th>
+                                                    <th>{{a.email}}</th>
+                                                    <th>{{a.nationality}}</th>
+                                                    <th>{{a.block}}</th>
+                                                    <th>{{a.sac}}</th>
+                                                <th>{{a.day}}</th>
+                                                    <th>{{a.schedule}}</th>
+                                                    <th>{{a.affair}}</th>
+                                                
+                                        
+
+                                        <th><a href='/Accept/{{a.id}}'class='btn btn-success' >Aceptar</a></th>
+
+
+
+                                        <th><a href='/reject/{{a.id}}'class='btn btn-danger'>Rechazar</a></th>
+                                                    </tr>
+                                            
+                                        {%endfor%}
+                                        
+                                        </div>
+                                            
+                                        </tbody>
+                                    </table>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                        <!-- End  Basic Table  --> 
+                                            </div>
+                                        </div>
+                                    </div>
+                                            
+                    
+                    
+                </div>
+                
+            </div>
+            
+</div>
+
+    {% endblock %}

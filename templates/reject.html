@@ -1,0 +1,89 @@
+{% extends "base_template.html" %}
+
+{% block content %}
+        
+        <!--/. NAV TOP  -->
+        <nav class="navbar-default navbar-side" role="navigation">
+            <div class="bg-circulo">
+                <ul class="nav" id="main-menu">
+                    <li>
+                        <a class="text-dark" href="/professional"><i class="fa fa-dashboard"></i> Status</a>
+                    </li>
+                     <li>
+                        <a class="text-dark" href="/accepted"><i class="fa fa-dashboard"></i> Accepted</a>
+                    </li>
+                     <li>
+                        <a class="text-dark" href="/rejected"><i class="fa fa-dashboard"></i> Rejected</a>
+                    </li>
+				</ul>
+            </div>
+
+        </nav>
+        <!-- /. NAV SIDE  -->
+        <div class="text-header d-flex align-items-center">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <h1 class="main_section fadeIn"> Turnos que Rechaze</h1>  
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br>
+        <br>
+        <br>
+        <div id="container containericons text-login">   
+			<div class="row">
+                <div class="col-md-12">
+                    <div class="bg-circulo-transp3">
+                        <div class="panel-body">
+                            <div class="panel-group" id="accordion">
+							    <div class="panel panel-primary">
+                                    <div class="panel-heading">
+                                        </div>
+                                        <div id="collapseTwo" class="panel-collapse in" style="height: auto;">
+                                            <div class="panel-body">
+                                                <div class="table-responsive">
+                                                    <table class="table">
+                                                        <thead>
+                                                            <tr>
+                                                            
+                                                                <th>Name</th>
+                                                                <th>Email</th>
+                                                                <th>Country</th>
+                                                                <th>Bloque</th>
+                                                                <th>Sac</th>
+                                                                <th>Fecha</th>
+                                                                <th>Horario</th>
+                                                                <th>Asunto</th>
+                                                                <th>Rechazar</th>
+                                                                <th>Borrar</th>		
+                                                            </tr>
+                                                        </thead>
+
+                                                        <tbody>
+                                                            {% for b in  record %}
+                                                            <tr>	
+                                                                <th>{{b.name}}</th>
+                                                                <th>{{b.email}}</th>
+                                                                <th>{{b.country}}</th>
+                                                                <th>{{b.block}}</th>
+                                                                <th>{{b.sac}}</th>
+                                                                <th>{{b.day}}</th>
+                                                                <th>{{b.schedule}}</th>
+                                                                <th>{{b.affair}}</th>	
+                                                                <th><a href='/accepted'class='btn btn-warning'>Aceptar</a></th>
+                                                                <th><a href='/reject_delete/{{b.id}}'class='btn btn-danger'>Borrar</a></th>
+                                                            </tr>                      
+                                                            {%endfor%}     
+                                                        </tbody>
+                                                    </table>
+                                                    
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+{% endblock %}

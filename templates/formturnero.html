@@ -1,0 +1,113 @@
+{% extends "base_template.html" %}
+{% block content %}
+    <br>
+    <br>
+    <br>
+    <div class="container containericons">
+      <h2 class="textlogin text-center">Solicitud de Turno para Auxiliar</h2>
+      <form  id="myform" name = "form" method="post" action="/reservation">
+       
+          <div class="textlogin"> 
+            <div class="col-12">
+              <div class="form-group">
+                  <label>Condición</label>
+                  <select name="condicion" class="form-control"  required >
+                      <option value selected ></option>
+                      <option value="c1">Ciudadano</option>
+                      <option value="c2">Profesional</option>   
+                  </select>
+              </div>
+          
+          
+              <div class="form-group">
+                  <div class="md-form mb-0">
+                      <label for="fname" class="">Nombre</label>
+                      <input type="text" id="name" name="fname" class="form-control" placeholder="Nombre" required>
+                  </div>
+              </div>
+
+              <div class="form-group">
+                  <div class="md-form mb-0">
+                      <label for="lname" class="">Apellido</label>
+                      <input type="text" id="caratula" name="lname" class="form-control" placeholder="Apellido" required>
+                  </div>
+              </div>
+
+              <div class="form-group">
+                  <div class="md-form mb-0">
+                      <label for="email" class="">Email</label>
+                      <input type="text" id="email" name="email" class="form-control" placeholder="Email" required>
+                  </div>
+              </div>
+
+              <div class="form-group">
+                <div class="md-form mb-0">
+                    <label for="nation" class="">Nacionalidad</label>
+                    <input type="text" id="nation" name="nation" class="form-control" placeholder="Nacionalidad" required>
+                </div>  
+              </div>
+
+              <div class="form-group">
+                <div class="md-form mb-0">
+                  <label>Teléfono</label>
+                  <input name="phone" type ="text" class="form-control" required>
+                </div>
+              </div>
+            
+              <div class="form-group">
+                  <label>Dependencia</label>
+                  <select name="block"  class="form-control" required>
+                      <option value selected ></option>
+                      <option value="Bloque 1: Juzgados Civiles y Comerciales">Bloque 1: Juzgados Civiles y Comerciales</option>
+                      <option value="Bloque 2: Juzgados Penales">Bloque 2: Juzgados Penales</option>
+                      <option value="Archivo Regional">Archivo Regional</option>  
+                  </select>
+              </div>
+            
+              <div class="form-group">
+                <div class="md-form mb-0">
+                    <label for="sac" class="">Número de SAC</label>
+                    <input type="text" id="name" name="sac" class="form-control" placeholder="Número de SAC" required>
+                </div>
+              </div>
+
+
+              <div class="form-group">
+                    <div class="md-form mb-0">
+                        <label>Fecha</label>
+                        <input name="day" type ="date" class="form-control">
+                  </div>
+              </div>
+
+
+              <div class="form-group">
+                <div class="md-form mb-0">
+                    <label>Horario</label>
+                    <select name="hora" class="form-control" required>
+                        <option value selected ></option>
+                        <option value="9:00 a 10:00 am">9:00 a 10:00 am</option>
+                        <option value="10:00 a 11:00 am">10:00 a 11:00 am</option>
+                        <option value="11:00 a 12:00 am">11:00 a 12:00 am</option>
+                        <option value="12:00 a 13:00 am">12:00 a 13:00 am</option>
+                    </select>
+                  </div>
+              </div>
+
+              <div class="form-group">
+                <div class="md-form mb-0">
+                    <label for="asunto" class="">Asunto</label>
+                    <input type="text" id="name" name="asunto" class="form-control" placeholder="Asunto" required>
+                </div>
+              </div>
+              <br>
+              <br>
+              <br>
+              
+              
+          <button class="btn  btnlogin " type="submit" name="submit">Guardar Cambios</button>
+            
+          </div>
+        </div>
+      </form>
+  </div>
+    {% endblock %}

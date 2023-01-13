@@ -1,0 +1,61 @@
+<!-- CARGAMOS COMO EXTEND LA PLANTILLA BASE -->
+{% extends "base_template.html" %}
+<!-- CARGAMOS CONTENIDO EN EL BLOQUE DE TITULO -->
+
+<!-- CARGAMOS CONTENIDO EN EL BLOQUE DE CONTENIDOS -->
+{% block content %}
+
+    <div class="text-header d-flex align-items-center">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-sm-12">
+                    <h1 class="main_section fadeIn"> Registro de Usuarios</h1>
+                
+                </div>
+            </div>
+        </div>
+    </div>
+    <br>
+    <br>
+    <br>
+    {% if error %}
+        <p class="error-text"><strong>Error:</strong> {{ error }}
+    {% endif %}
+    <!-- PARA EVITAR QUE EL BROWSER VALIDE LOS CAMPOS POR NOSOTROS, AÑADIMOS EL ATRIBUTO novalidate -->
+    <div class="container-fluid aria-expanded displey-flex container-md containerlogin col-sm-4 bg-circulo-transp p-4 ml-5">
+        <h3 class="textlogin ml-1">Ingrese sus datos</h3>
+            <br>
+        <form class="textlogin" action="" method="post" novalidate>
+                <!-- LA LÍNEA {{ form.hidden_tag() }} AÑADE TODOS LOS CAMPOS DE TIPO HIDDEN DEL FORM SI LOS HAY. Flask-WTF GENERA PARA TODAS LAS INSTANCIAS DE LA CLASE FlaskForm UN CAMPO OCULTO QUE PROTEGE LA APP DE ATAQUES CSRF -->
+            {{ form.hidden_tag() }}
+            <div>
+                {{ form.name.label }} <br>
+                {{ form.name (class="form-control")}}
+                <!-- LE MOSTRAMOS AL USUARIO EL ERROR DE VALIDACIÓN -->
+                {% for error in form.name.errors %}
+                <span class="error-text">{{ error }}</span>
+                {% endfor %}
+            </div>
+            <div>
+                {{ form.email.label }} <br>
+                {{ form.email (class="form-control")}}
+                <!-- LE MOSTRAMOS AL USUARIO EL ERROR DE VALIDACIÓN -->
+                {% for error in form.email.errors %}
+                <span class="error-text">{{ error }}</span>
+                {% endfor %}
+            </div>
+            <div>
+                {{ form.password.label }}<br>
+                {{ form.password (class="form-control")}}
+                <!-- LE MOSTRAMOS AL USUARIO EL ERROR DE VALIDACIÓN -->
+                {% for error in form.password.errors %}
+                <span class="error-text">{{ error }}</span>
+                {% endfor %}
+            </div>
+            <br>
+            <div>
+                {{ form.submit(class="btn btnlogin") }}
+            </div>
+        </form>
+    </div>
+{% endblock %}

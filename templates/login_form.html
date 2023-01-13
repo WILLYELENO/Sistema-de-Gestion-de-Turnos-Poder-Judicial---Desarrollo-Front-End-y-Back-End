@@ -1,0 +1,51 @@
+{% extends "base_template.html" %}
+
+
+
+{% block title %}Login{% endblock %}
+
+{% block content %}
+<div class="text-header d-flex align-items-center">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-12">
+                <h1 class="main_section fadeIn"> Inicia Sesion</h1>
+               
+            </div>
+        </div>
+    </div>
+</div>
+<br>
+    <br>
+    <br>
+
+<div class="container-fluid aria-expanded displey-flex container-md containerlogin col-sm-4 bg-circulo-transp p-4 ml-5">
+    <h3 class="textlogin ml-1">Portal del Auxiliar</h3>
+    <br>
+    <div>
+        <form class="textlogin"  action="/login" method="post" novalidate>
+            {{ form.hidden_tag() }}
+            <div>
+                {{ form.email.label }}
+                {{ form.email(class="form-control") }}<br>
+                {% for error in form.email.errors %}
+                <div class="error-text">{{error}}</div>
+                {% endfor %}
+            </div>
+            <div>
+                {{ form.password.label }}
+                {{ form.password(class="form-control") }}
+                {% for error in form.password.errors %}
+                <div class="error-text">{{error}}</div>
+                {% endfor %}
+            </div>
+            <div class="p-1">{{ form.remember_me() }} {{ form.remember_me.label }}</div>
+            <div>
+                {{ form.submit(class="btn btnlogin") }}
+            </div>
+        </form>
+    </div>
+    
+</div>
+
+{% endblock %}

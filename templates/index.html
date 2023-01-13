@@ -1,0 +1,87 @@
+<!-- CARGAMOS COMO EXTEND LA PLANTILLA BASE -->
+{% extends "base_template.html" %}
+<!-- CARGAMOS CONTENIDO EN EL BLOQUE DE TITULO -->
+{% block title %}Poder Judicial{% endblock %}
+<!-- CARGAMOS CONTENIDO EN EL BLOQUE DE CONTENIDOS -->
+{% block content %}
+<div class="text-header d-flex align-items-center">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-12">
+                <h1 class="main_section fadeIn">Poder Judicial de la Provincia de Córdoba - Sede Río Cuarto</h1>
+               
+            </div>
+        </div>
+    </div>
+</div>
+<br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <div class="container-md d-md-flex">
+        <div class="container-md col-sm-3 containericons text-center">
+            <br>
+            <div>
+                <img class="img-fluid" src="/static/images/TurneroDigitalpng.png" alt="">
+            </div>
+            <br>
+            
+
+            <div>
+                <a href='{{ url_for("formturnero") }}'><button type="button" class="btn btnlogin btn-light">Solicitar Turno</button></a>
+            </div>
+            <br>
+            <div class="card-body">
+                <h2 class="card-title text-white">Solicitud de turnos</h2>
+                <p class="card-text">Si Ud es ciudadano y ha sido citado a tribunales, solicite su turno aquí</p>
+              </div>
+            <br>
+            
+        </div>
+        <div class="container-md col-sm-3 containericons text-center">
+            <br>
+            <div>
+                <img class="img-fluid" src="/static/images/expediente_electronico.png" alt="">
+            </div>
+            <br>
+            <div>
+                <button type="button" class="btn btnlogin btn-light">Iniciar Sesión</button>
+            </div>
+            <br>
+            <div class="card-body">
+                <h2 class="card-title text-white">SAC</h2>
+                <p class="card-text">Gestión e Ingreso a Despacho de Expedientes</p>
+              </div>
+            <br>
+        </div>
+        <div class="container-md col-sm-3 containericons text-center">
+            <br>
+            <div>
+                <img class="img-fluid" src="/static/images/logo_boletin_judicial.png" alt="">
+            </div>
+            <br>
+            <div>
+                <button type="button" class="btn btnlogin btn-light">Descargar Boletín</button>
+            </div>
+            <br>
+            <div class="card-body">
+                <h2 class="card-title text-white"> Boletín Judicial</h2>
+                <p class="card-text">Desde aquí podrá acceder y descargar la última publicación </p>
+              </div>
+            <br>
+            
+            <br>
+        </div>
+    </div>
+    <br>
+    <br>
+    <br>
+   
+    <br>
+    <ul>
+    {% for post in posts %}
+        <li><a href="">{{ post.title }}</a></li>
+    {% endfor %}
+    </ul>
+{% endblock %}
