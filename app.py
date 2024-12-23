@@ -34,7 +34,7 @@ db = SQLAlchemy(app)
 def index():
     return render_template('index.html')
 
-#Ruta Registro
+#Ruta Registroo
 @app.route("/signup_form/", methods=["GET", "POST"])
 def show_signup_form():
     if current_user.is_authenticated:
